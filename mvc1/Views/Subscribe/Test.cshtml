@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewData["Title"] = "Test";
+}
+
+<h1>Test page</h1>
+
+<br />
+<p>Variables</p>
+
+@{
+    string message = "Welcome to ASP.NET Core MVC!";
+}
+<p>@message</p>
+
+
+<br />
+<p>Array</p>
+
+@{
+    string[] colors = new string[] { "Red", "Green", "Blue" };
+}
+<ul>
+    @foreach (var color in colors)
+    {
+        <li>@color</li>
+    }
+</ul>
+
+
+<br />
+<p>If Statment</p>
+
+@{
+    int number = 20;
+}
+@if (number > 10)
+{
+    <p>The number is greater than 10.</p>
+}
+else
+{
+    <p>The number is 10 or less.</p>
+}
+
+
+<br />
+<p>Switch</p>
+
+@{
+    var day = DateTime.Now.DayOfWeek.ToString();
+}
+@switch (day)
+{
+    case "Monday":
+        <p>It's Monday, let's start the week off strong!</p>
+        break;
+    case "Friday":
+        <p>It's Friday, time to wind down the week!</p>
+        break;
+    default:
+        <p>Today is @day.</p>
+        break;
+}
+
+
+<br />
+<p>Loop</p>
+
+@{
+    int[] numbers = { 1, 2, 3, 4, 5 };
+}
+<ul>
+    @for (int i = 0; i < numbers.Length; i++)
+    {
+        <li>@numbers[i]</li>
+    }
+</ul>
